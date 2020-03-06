@@ -1,16 +1,20 @@
 import React from 'react';
-import {SafeAreaView, Text, StatusBar} from 'react-native';
+import 'react-native-gesture-handler';
+import {Provider} from 'react-redux';
+import {NavigationContainer} from '@react-navigation/native';
+import {StatusBar} from 'react-native';
 import './config/ReactotronConfig';
+import Routes from './routes';
 
-const App = () => {
+import {store} from './store';
+
+export default function App() {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Text> Text</Text>
-      </SafeAreaView>
-    </>
+    <Provider store={store}>
+      <NavigationContainer>
+        <StatusBar barStyle="light-content" backgroundColor="#2C3E50" />
+        <Routes />
+      </NavigationContainer>
+    </Provider>
   );
-};
-
-export default App;
+}
