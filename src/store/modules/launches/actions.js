@@ -4,9 +4,9 @@ export function getLaunchesRequest() {
   };
 }
 
-export function getLaunchesSuccess(allLaunches) {
+export function getLaunchesSuccess(allLaunche) {
   return {
     type: '@launches/GET_SUCCESS',
-    allLaunches,
+    allLaunche,
   };
 }

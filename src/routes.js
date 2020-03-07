@@ -9,7 +9,7 @@ export default function Routes() {
   return (
     <Stack.Navigator
       initialRouteName="Launches"
-      headerMode="screen"
+      headerMode="none"
       screenOptions={{
         headerTintColor: '#F7C315',
         headerTitleAlign: 'center',

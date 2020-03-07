@@ -6,8 +6,9 @@ import rootSaga from './modules/rootSaga';
 const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
 
 const sagaMiddleware = createSagaMiddleware({sagaMonitor});
+const middlewares = [sagaMiddleware];
+const store = createStore(rootReducer, middlewares);
 
-const store = createStore(rootReducer);
 sagaMiddleware.run(rootSaga);
 
-export default {store};
+export {store};
