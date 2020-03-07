@@ -2,21 +2,49 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Launches from './pages/Launches';
 import Home from './pages/Home';
+import LauncheDetails from './pages/LauncheDetails';
+import ArticleWebView from './pages/ArticleWebView';
 
-const Stack = createStackNavigator();
+const Main = createStackNavigator();
+const Modal = createStackNavigator();
+
+function MainStack() {
+  return (
+    <Main.Navigator initialRouteName="Launches" headerMode="none">
+      <Main.Screen name="Launches" component={Launches} />
+      <Main.Screen name="Home" component={Home} />
+    </Main.Navigator>
+  );
+}
 
 export default function Routes() {
   return (
-    <Stack.Navigator
-      initialRouteName="Launches"
-      headerMode="none"
+    <Modal.Navigator
       screenOptions={{
-        headerTintColor: '#F7C315',
+        headerTintColor: '#2C3E50',
         headerTitleAlign: 'center',
-        headerStyle: {backgroundColor: '#2C3E50'},
-      }}>
-      <Stack.Screen name="Launches" component={Launches} />
-      <Stack.Screen name="Home" component={Home} />
-    </Stack.Navigator>
+        headerStyle: {backgroundColor: '#fece2e'},
+      }}
+      mode="modal">
+      <Modal.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Main"
+        component={MainStack}
+      />
+      <Modal.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="LauncheDetails"
+        component={LauncheDetails}
+      />
+      <Modal.Screen
+        name="ArticleWebView"
+        component={ArticleWebView}
+        options={{title: 'Artigo '}}
+      />
+    </Modal.Navigator>
   );
 }

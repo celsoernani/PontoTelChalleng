@@ -2,9 +2,11 @@ import React from 'react';
 
 import {Launche, MissionPath, MissionName, RocketName} from './styles';
 
-export default function LaunchItem({launche}) {
+export default function LaunchItem({navigation, launche}) {
   return (
-    <Launche elevation={2}>
+    <Launche
+      elevation={2}
+      onPress={() => navigation.navigate('LauncheDetails', {launche})}>
       <MissionPath
         source={{
           uri: launche.links.mission_patch_small

@@ -24,6 +24,7 @@ export const MissionName = styled.Text`
 `;
 export const RocketName = styled.Text`
   font-size: 12px;
-  color: #e2e6e9;
+  color: #111921;
+  opacity: 0.3;
   text-align: center;
 `;

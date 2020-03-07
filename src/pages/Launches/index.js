@@ -27,7 +27,9 @@ export default function Launches({navigation}) {
       <LaunchList
         data={filterLaunches}
         keyExtractor={launche => String(launche.flight_number)}
-        renderItem={({item: launche}) => <LaunchItem launche={launche} />}
+        renderItem={({item: launche}) => (
+          <LaunchItem navigation={navigation} launche={launche} />
+        )}
       />
     );
   }
@@ -45,10 +47,6 @@ export default function Launches({navigation}) {
       />
       <SearchBar onChangeTextSearch={onChangeTextSearch} />
       {renderList()}
-      {/* <Button
-        title="Go to Home... again"
-        onPress={() => navigation.navigate('Home')}
-      /> */}
     </Container>
   );
 }
