@@ -46,7 +46,13 @@ export default function LauncheDetails({route, navigation}) {
         </ButtonOption>
         <Line />
 
-        <ButtonOption>
+        <ButtonOption
+          onPress={() =>
+            navigation.navigate('MissionVideo', {
+              link: launche.links.video_link,
+              youtubeId: launche.links.youtube_id,
+            })
+          }>
           <OptionsTitle>Video</OptionsTitle>
           <CardDesc>Vizualize um vídeo sobre esse lançamento</CardDesc>
         </ButtonOption>

@@ -4,6 +4,7 @@ import Launches from './pages/Launches';
 import Home from './pages/Home';
 import LauncheDetails from './pages/LauncheDetails';
 import ArticleWebView from './pages/ArticleWebView';
+import MissionVideo from './pages/MissionVideo';
 
 const Main = createStackNavigator();
 const Modal = createStackNavigator();
@@ -44,6 +45,11 @@ export default function Routes() {
         name="ArticleWebView"
         component={ArticleWebView}
         options={{title: 'Artigo '}}
+      />
+      <Modal.Screen
+        name="MissionVideo"
+        component={MissionVideo}
+        options={{title: 'Vídeo '}}
       />
     </Modal.Navigator>
   );

@@ -17,7 +17,6 @@ export default function Launches({navigation}) {
   }, [dispatch]);
   const {launches} = useSelector(state => state);
   function renderList() {
-    // Essa função decide qual componente sera carregado dependendo da resposta da consulta.
     const filterLaunches = launches.filter(({mission_name}) =>
       mission_name.toLowerCase().includes(textSearch.toLowerCase()),
     );
