@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {StatusBar, View} from 'react-native';
+import React from 'react';
+import {View} from 'react-native';
 import RocketImagePng from '../../assets/images/rocket.png';
 import {
   Container,
@@ -20,7 +20,6 @@ export default function LauncheDetails({route, navigation}) {
   const {launche} = route.params;
   return (
     <Container>
-      <StatusBar barStyle="light-content" backgroundColor="#fece2e" />
       <HeaderMission>
         <ImageMission source={{uri: launche.links.mission_patch_small}} />
       </HeaderMission>

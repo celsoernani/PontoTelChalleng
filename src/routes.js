@@ -11,9 +11,9 @@ const Modal = createStackNavigator();
 
 function MainStack() {
   return (
-    <Main.Navigator initialRouteName="Launches" headerMode="none">
-      <Main.Screen name="Launches" component={Launches} />
+    <Main.Navigator initialRouteName="Home" headerMode="none">
       <Main.Screen name="Home" component={Home} />
+      <Main.Screen name="Launches" component={Launches} />
     </Main.Navigator>
   );
 }

@@ -1,17 +1,16 @@
 import React from 'react';
-import {Button, View, Text, StatusBar} from 'react-native';
-// import { Container } from './styles';
+import HomeBack from '../../assets/images/homeback.png';
+import Background from '../../components/Background';
+import {Title, SubTitle, Container, ButtonRocket} from './styles';
 
 export default function Home({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <StatusBar barStyle="light-content" backgroundColor="#2C3E50" />
-
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Launches')}
-      />
-    </View>
+    <Background image={HomeBack}>
+      <Container>
+        <Title>Bem vindo PontoTel !</Title>
+        <SubTitle>Aperte no foguete {'\n'}embarque nesse lançamento</SubTitle>
+      </Container>
+      <ButtonRocket onPress={() => navigation.navigate('Launches')} />
+    </Background>
   );
 }

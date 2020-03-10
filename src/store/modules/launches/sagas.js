@@ -2,13 +2,9 @@ import {call, put, all, takeLatest} from 'redux-saga/effects'; // importando fun
 import api from '../../../services/api'; // importando api
 import {getLaunchesSuccess} from './actions'; // importando as actions necessárias.
 
-function* getLaunches() {
+function* getLaunches({page}) {
   // função assíncrona
-  const {data} = yield call(api.get, `/launches?limit=15`); // chamando a api para carregar os lançamentos.
-  // yield data.map(allLaunche => {
-  //   return put(getLaunchesSuccess(allLaunche));
-  // });
-
+  const {data} = yield call(api.get, `/launches?limit=16&offset=${page}`); // chamando a api para carregar os lançamentos.
   yield all(data.map(allLaunche => put(getLaunchesSuccess(allLaunche))));
 }
 

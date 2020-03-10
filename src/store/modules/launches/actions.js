@@ -1,6 +1,7 @@
-export function getLaunchesRequest() {
+export function getLaunchesRequest(page) {
   return {
     type: '@launches/GET_REQUEST',
+    page,
   };
 }
 
